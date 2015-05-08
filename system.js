@@ -6,14 +6,11 @@ exports.namespace = 'nscdebug';
 exports.id = '86da3b0e-0edf-4911-ab03-4ec3f239136e';
 
 exports.topology = {
-  development: {
+  local: {
+    root: ['nscfe']
+  },
+  staging: {
+    root: ['nscfe']
   }
 };
 
-// Example
-//
-// exports.topology = {
-//   development: {
-//     root: ['web']
-//   }
-// };

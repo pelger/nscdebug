@@ -4,16 +4,23 @@ exports.root = {
   type: 'blank-container'
 };
 
-// Example
-//
-// exports.web = {
-//   type: 'docker',
-//     specific: {
-//       repositoryUrl: 'git@github.com:nearform/nscaledemoweb.git',
-//       execute: {
-//         // docker run <ARGS> image <EXEC>
-//         args: '-p 8000:8000 -d',
-//         exec: ''
-//       }
-//     }
-// };
+
+exports.realsrv = {
+  local: {
+    type: 'process',
+    specific: {
+    }
+  },
+  shared$: {
+    type: 'docker',
+    specific: {
+      repositoryUrl: 'git@github.com:pelger/.git',
+      buildScript: 'buildreal.sh',
+      container: {
+        args: '-p 9001:9001',
+        exec: '/usr/bin/node /srv/real-srv'
+      }
+    }
+  }
+};
+
